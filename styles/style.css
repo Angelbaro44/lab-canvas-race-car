@@ -1,8 +1,17 @@
+*{
+  border: 1px solid red;
+}
+
+
 body {
   padding: 0;
   text-align: center;
 }
-
+canvas{
+  
+  background: #eee;
+  border: 1px solid red;
+}
 .game-intro {
   float: left;
   padding: 0% 10%;

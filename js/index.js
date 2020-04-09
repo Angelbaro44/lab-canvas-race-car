@@ -1,30 +1,15 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
+var ballRadius = 10;
 var x = canvas.width/2;
 var y = canvas.height-30;
-
-var ballRadius = canvas.width / 20;
-
 var dx = 2;
 var dy = -2;
-// paddle
 var paddleHeight = 10;
-var paddleWidth = 75 + ballRadius;
+var paddleWidth = 75;
 var paddleX = (canvas.width-paddleWidth)/2;
-// .keymapping
 var rightPressed = false;
 var leftPressed = false;
-var img = new Image();   // Create new img element
-img.src = 'images/car.png'; // Set source path
-var imgReducer = -20;
-
-// var bricks = [];
-// for(var c=0; c<brickColumnCount; c++) {
-//     bricks[c] = [];
-//     for(var r=0; r<brickRowCount; r++) {
-//         bricks[c][r] = { x: 0, y: 0 };
-//     }
-// }
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -49,8 +34,8 @@ function keyUpHandler(e) {
 
 function drawBall() {
     ctx.beginPath();
-    ctx.rect(x,y,ballRadius,ballRadius,0)
-    ctx.fillStyle = img;
+    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+    ctx.fillStyle = "#f";
     ctx.fill();
     ctx.closePath();
 }
@@ -61,15 +46,18 @@ function drawPaddle() {
     ctx.fill();
     ctx.closePath();
 }
-
-
+function drawPaddle2() {
+    ctx.beginPath();
+    ctx.rect(x, 0, paddleWidth, paddleHeight);
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
+}
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
     drawPaddle();
-    console.log(x+dx'x')
-    console.log(y+dy"y")
-
+    drawPaddle2(); 
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
     }
@@ -77,14 +65,14 @@ function draw() {
         dy = -dy;
     }
     else if(y + dy > canvas.height-ballRadius) {
-        if(x > (paddleX - 5) && x < (paddleX + 5 +paddleWidth)) {
-           if(y = y-paddleHeight){
-            dy = -dy  ;
-            
-			 }
+        if(x > paddleX - ballRadius && x < paddleX + ballRadius + paddleWidth) {
+            dx++;
+            dy++;
+
+            dy = -dy;
         }
         else {
-            // alert("GAME OVER");
+            alert("GAME OVER");
             document.location.reload();
             clearInterval(interval); // Needed for Chrome to end game
         }
@@ -100,5 +88,5 @@ function draw() {
     x += dx;
     y += dy;
 }
-var speed = 10;
-var interval = setInterval(draw, 1);
+
+var interval = setInterval(draw, 10);

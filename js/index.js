@@ -153,7 +153,7 @@ function draw() {
     drawBall();
     drawPaddle();
     drawPaddle2(); 
-    document.querySelector("body > h1").innerText= score + 'FireBalls Blocked '
+    document.querySelector("body > h1").innerText= score + ' FireBalls Blocked'
     console.log(y)
     if(score === 25 ){
         alert("Wow you won the game!!!! What a godly player O.o");
@@ -192,4 +192,6 @@ function draw() {
     x += dx;
     y += dy;
 }
-document.querySelector("#startButton").addEventListener("click", ()=> interval = setInterval(draw, 15));
+// document.querySelector(section:nth-child(1)).addEventListener("click", ()=> interval = setInterval(draw, 10));
+// document.querySelector("section").addEventListener("click", ()=> interval = setInterval(draw, 15));
+document.querySelector("section").addEventListener("click", ()=> interval = setInterval(draw, 10));

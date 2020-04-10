@@ -8,8 +8,10 @@
 body {
   padding: 0;
   text-align: center;
-  background-image: url(images/Pokemon-Emerald-GIF-Find-and-Share-on-GIPHY.gif);
-  
+    /* background-image: url(images/color-gradient-background.jpg); */
+  /* background: url(images/color-gradient-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; */
 }
 #myCanvas{
   
@@ -57,4 +59,12 @@ body button {
 #game-board {
     float: left;
     padding: 20px 0px;
+}
+section{
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 10%;
+  background-color: navy;
+  height: 100px;
 }

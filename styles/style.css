@@ -7,9 +7,9 @@ body {
   padding: 0;
   text-align: center;
 }
-canvas{
+#myCanvas{
   
-  background:
+  /* background-image: url(images/18oiwrk32uilpgif.gif); */
   border: 1px solid red;
 }
 .game-intro {

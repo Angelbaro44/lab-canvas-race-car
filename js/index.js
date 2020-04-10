@@ -160,7 +160,7 @@ function draw() {
         document.location.reload();
         clearInterval(interval); // Needed for Chrome to end game
     }
-    if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+    if(x + dx > canvas.width-ballRadius || x + dx < 0) {
         dx = -dx;
     }
     if(y + dy < paddleHeight) {

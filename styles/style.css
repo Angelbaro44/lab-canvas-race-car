@@ -1,22 +1,35 @@
 *{
   /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column ;
 }
 
 
 body {
   padding: 0;
   text-align: center;
+  background-image: url(images/Pokemon-Emerald-GIF-Find-and-Share-on-GIPHY.gif);
+  
 }
 #myCanvas{
   
   /* background-image: url(images/18oiwrk32uilpgif.gif); */
   /* border: 1px solid red; */
 }
+button{
+  align-self: center;
+  width: 400px;
+  height:50px;
+  text-align: -webkit-center;
+    justify-content: center;
+}
 .game-intro {
   float: left;
   padding: 0% 10%;
 }
-
+#back{
+  background-position: bottom;
+}
 .game-intro p {
   font-size: 18px;
   font-family: "Verdana"

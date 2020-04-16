@@ -192,6 +192,6 @@ function draw() {
     x += dx;
     y += dy;
 }
-// document.querySelector(section:nth-child(1)).addEventListener("click", ()=> interval = setInterval(draw, 10));
-// document.querySelector("section").addEventListener("click", ()=> interval = setInterval(draw, 15));
-document.querySelector("section").addEventListener("click", ()=> interval = setInterval(draw, 10));
+document.querySelector("button:nth-child(1)").addEventListener("click", ()=> interval = setInterval(draw, 20));
+document.querySelector("button:nth-child(2)").addEventListener("click", ()=> interval = setInterval(draw, 15));
+document.querySelector("button:nth-child(3)").addEventListener("click", ()=> interval = setInterval(draw, 10));
